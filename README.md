@@ -1,4 +1,4 @@
-# sample-app
+# simple-app
 使用 Vue.js 实现的练手项目，是现在手上正在开发的项目的 super mini 版本，PC 端项目
 
 ## Project setup
