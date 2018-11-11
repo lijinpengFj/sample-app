@@ -1,5 +1,5 @@
 <template>
-	<div class="content-item phone-view form-view">
+	<div class="content-item phone-view form-view" v-bind:key="params.key">
 		<h2 class="form-view-title">{{ params.title }}</h2>
 		<template v-for="item in inputItemGroups">
 			<InputGroup
@@ -53,7 +53,6 @@
 					//再判断有效性
 					if(this.valid()){
 						//业务逻辑，交给外部来做处理
-						console.log('dosomething');
 						this.$emit('form', {
 							head: 'submit',
 							//组合数据
@@ -90,7 +89,9 @@
 				}))
 			},
 			combineData: function(){
-				var data = {};
+				var data = {
+					js_form_key: this.params.key//传递到外部做 Form 的唯一标识
+				};
 				this.inputItemGroups.forEach((groupItem, index) => {
 					let groupItemName = groupItem.name
 					let groupItemValue = groupItem.value
