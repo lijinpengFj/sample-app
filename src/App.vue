@@ -7,7 +7,9 @@
                     <div class="form-con-content">
                         <Form v-bind:params="phoneParams" v-bind:key="phoneParams.key" v-on:form="onformHandle" v-show="is_phone"></Form>
                         <Form v-bind:params="emailParams" v-bind:key="emailParams.key" v-on:form="onformHandle" v-show="is_email"></Form>
-                        <a href="javascript:void(0);" class="switchview-anchor anchor" v-on:click="onswitchClickHandle">{{ switch_title }}</a>
+                        <div class="tl">
+                            <a href="javascript:void(0);" class="switchview-anchor anchor" v-on:click="onswitchClickHandle">{{ switch_title }}</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -115,5 +117,14 @@
 </script>
 
 <style lang="less">
-    @import './less/app.module.less';
+    @import "./less/common/common.less";
+    @import "./less/common/function.less";
+    @import "./less/common/animation.less";
+    @import "./less/common/reset.less";
+    @import "./less/common/international.less";
+    .main-con{
+        .widthHeight(100%, 780px);
+        background: url('./assets/bg.png') center center no-repeat;
+        position: relative;
+    }
 </style>

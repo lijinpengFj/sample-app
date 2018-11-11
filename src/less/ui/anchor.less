@@ -1,0 +1,39 @@
+/**
+ * anchor.less
+ * 锚点相关样式
+ */
+
+.anchor{
+	font-size: 13px;
+	color: @color-orange;
+	&:hover{
+		opacity: 0.8;
+	}
+	&:active{
+		opacity: 1;
+	}
+}
+
+.delimiter{
+	display: inline-block;
+	.widthHeight(1px, 10px);
+	margin: 0 10px;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.anchor-loading{
+	&::after{
+		content: '';
+		display: inline-block;
+		min-width: 2px; 
+		min-height: 2px;
+	    box-shadow: 2px 0 currentColor, 6px 0 currentColor, 10px 0 currentColor; /* for IE9+, ..., 3个点 */
+	    animation: dot 4s infinite step-start both; /* for IE10+, ... */
+	}
+}
+
+@keyframes dot {
+    25% { box-shadow: none; }                                  /* 0个点 */
+    50% { box-shadow: 2px 0 currentColor; }                    /* 1个点 */
+    75% { box-shadow: 2px 0 currentColor, 6px 0 currentColor;  /* 2个点 */ }
+}

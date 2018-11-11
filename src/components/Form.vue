@@ -15,7 +15,7 @@
 		</template>
 		<div class="btn-con">
 			<p class="btn-tip" v-show="params.btn_tip">{{ params.btn_tip }}</p>
-			<button type="button" class="btn-full" v-on:click="onclickHandle">{{ params.btn_title }}</button>
+			<button type="button" class="btn-full" v-on:click="onclickHandle" v-bind:class="{ enable: is_filled }">{{ params.btn_title }}</button>
 		</div>
 	</div>
 	</div>
@@ -111,3 +111,100 @@
 		}
 	}
 </script>
+
+<style lang="less">
+	@import "../less/common/common.less";
+	@import "../less/common/function.less";
+	@import "../less/common/animation.less";
+	@import "../less/ui/btn.less";
+	@import "../less/ui/anchor.less";
+	.form-view-con{
+		.widthHeight(384px, 780px);
+		position: relative;
+		.auto;
+		.main-view{
+			height: @primary;
+			box-sizing: border-box;
+			padding: 0 25px;
+			padding-top: 160px;
+			&.first-view{
+				&.hide{
+					display: none;
+				}
+			}
+			&.second-view.hide{
+				display: none;
+			}
+		}
+		.form-con-content{
+			.tc;
+			position: relative;
+		}
+		.switchview-anchor, .switchview-anchor:link, .switchview-anchor:visited, .switchview-anchor:hover, .switchview-anchor:active{
+			color:#ea9232;
+			font-size: 16px;
+		}
+		.btn-con{
+			margin-top: 30px;
+			margin-bottom: 20px;
+			position: relative;
+			.btn-full{
+				.widthHeight(335px, 40px);
+				line-height: 40px;
+				.tc;
+				font-size: 16px;
+			}
+			.btn-tip{
+				width: @primary;
+				font-size: 12px;
+				color: #ff1f1f;
+				.tc;
+				position: absolute;
+				left: 0;
+				bottom: calc(100% + 6px);
+			}
+		}
+		.go-otherpage-group{
+			font-size: 15px;
+			color: #fff;
+			.anchor{
+				font-size: 15px;
+			}
+		}
+		.form-tips{
+			margin-top: -10px;
+			font-size: 12px;
+			color: rgba(255, 255, 255, 0.6);
+		}
+		.form-footer{
+			position: absolute;
+			width: @primary;
+			left: 0;
+			bottom: 60px;
+			.tc;
+			.form-footer-item{
+				margin-top: 10px;
+				font-size: 12px;
+				color: rgba(255,255,255, 0.6);
+				.anchor{
+					font-size: 12px;
+				}
+			}
+		}
+		.form-view{
+			&.hide{
+				display: none;
+			}
+			.form-view-title{
+				font-size: 29px;
+				color: #fff;
+				margin-bottom: 36px;
+				font-weight: normal;
+				.sub-title{
+					font-size: 12px;
+					color: rgba(255, 255, 255, 0.6);
+				}
+			}
+		}
+	}
+</style>
