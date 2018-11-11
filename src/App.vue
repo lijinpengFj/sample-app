@@ -1,18 +1,24 @@
 <template>
     <div id="app">
-        <div class="main-con tc">
-            <img alt="Vue logo" src="./assets/logo.png">
-            <HelloWorld msg="Welcome to Your Vue.js App"/>
+        <div class="main-con">
+            <InputGroup name="phone" label="手机号" v-bind:required="status" placeholder="请输入手机号" error_tip="出错了" v-model="value"></InputGroup>
+            <p>{{ value }}</p>
         </div>
     </div>
 </template>
 
 <script>
-    import HelloWorld from './components/HelloWorld.vue'
+    import InputGroup from './components/InputGroup.vue'
     export default {
         name: 'app',
+        data: function(){
+            return {
+                status: true,
+                value: 'text'
+            }
+        },
         components: {
-            HelloWorld
+            InputGroup
         }
     }
 </script>
