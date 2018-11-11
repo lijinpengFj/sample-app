@@ -57,7 +57,6 @@ var inspect = {
 	}
 }
 export default function factories(){
-	console.log('factories', arguments);
 	var args = Array.prototype.slice.call(arguments),name = args.shift();
     if(name in inspect){
     	return inspect[name].apply(this,args);

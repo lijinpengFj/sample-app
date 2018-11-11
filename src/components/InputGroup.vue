@@ -11,7 +11,6 @@
 </template>
 
 <script>
-	import verifys_factories from '../utils/verifys.js'
     export default {
 		name: 'InputGroup',
 	    props: {
@@ -39,37 +38,6 @@
 	    	}
 	    },
 	    computed: {//计算属性
-	    	// is_filled: function(){//输入框是否被填充，不是非必填项的时候看做是已填充
-	    	// 	console.log('computed is_filled', this.value);
-	    	// 	if(!this.required){
-	    	// 		return true
-	    	// 	}else{
-	    	// 		return !!this.value
-	    	// 	}
-	    	// },
-	    	// is_valid: function(){
-	    	// 	console.log('computed is_valid', this.value);
-	    	// 	if(!this.isFilled){
-	    	// 		return false
-	    	// 	}else{
-	    	// 		this.error_tip_inner = '';
-	    	// 		//单条的数据格式类似 { name: 'Fn', args: [12, 13],/*args 参数为非必填*/ text: '输入值大小有限制' }
-	    	// 		for(let verifysItem of this.verifys){
-	    	// 			let itemName = verifysItem.name
-	    	// 			let itemText = verifysItem.text || ''
-	    	// 			let itemArgs = verifysItem.args
-	    	// 			let args = [itemName, this.value]
-	    	// 			console.log('verifysItem', verifysItem)
-	    	// 			if(itemArgs){//拼装验证函数的参数
-	    	// 				args = args.concat(itemArgs)
-	    	// 			}
-	    	// 			if(!verifys_factories.apply(this, args)){
-	    	// 				this.error_tip_inner = itemText
-	    	// 			}
-	    	// 		}
-	    	// 		return true
-	    	// 	}
-	    	// },
 			delete_show: function(){
 				return !!this.value
 			},
