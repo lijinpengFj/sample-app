@@ -1,0 +1,33 @@
+/**
+ * adaption.less
+ * 自适应
+ * 定义三个段，如果最大段为1，则次一段为2/3，最小一段为1/2
+ */
+
+@adaption_large: ~"(min-width: 1068px)";
+@adaption_medium: ~"(max-width: 1068px)";
+@adaption_small: ~"(max-width: 735px)";
+
+.adaption(@name, @px){
+	@{name}: @px * 1px;
+	@media @adaption_medium {
+		@{name}: round(@px * 0.85) * 1px;
+	}
+	@media @adaption_small {
+		@{name}: round(@px * 0.66) * 1px;
+	}
+}
+
+.pc-show-only{
+	display: block;
+	@media @adaption_small {
+		display: none;
+	}
+}
+
+.mobile-show-only{
+	display: none;
+	@media @adaption_small {
+		display: block;
+	}
+}

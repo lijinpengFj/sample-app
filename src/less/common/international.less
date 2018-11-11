@@ -1,0 +1,45 @@
+/**
+ * international.less
+ * 国际化相关
+ */
+
+//语言对应关系
+//中文简体 zh-CN
+//中文繁体 zh-TW
+//英 en
+//韩 ko
+//日 ja
+//阿拉伯 ar
+//德 de
+//俄 ru
+//法 fr
+//荷 af
+//葡 pt
+//西 es
+
+.international(@language, @name, @rest...){
+	&:lang(@{language}){
+		@{name}: @rest;
+	}
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, a {
+	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	&:lang(zh-CN){
+		font-family: "PingFang SC Regular", "PingFang SC", "Microsoft Yahei", Arial, Verdana;
+	}
+	&:lang(zh-TW){
+		font-family: "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	}
+	&:lang(ko){
+		font-family: "Apple Gothic", "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	}
+	&:lang(ja){
+		font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	}
+	&:lang(ar){
+		font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		direction: rtl;
+		text-align: right;
+	}
+}

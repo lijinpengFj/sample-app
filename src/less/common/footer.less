@@ -1,0 +1,119 @@
+/**
+ * footer.less
+ * 底部的样式
+ */
+
+.section-footer{
+	width: @primary;
+	.adaption(height, 180px);
+	background-color: #160220;
+	position: relative;
+	.link-con{
+		.adaption(line-height, 180px);
+	}
+	a{
+		font-size: 14px;
+		color: #fff;
+		&:hover{
+			color: #e62071;
+		}
+	}
+	.footer-item{
+		margin-right: 160px;
+		.footer-info-con{
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 14px;
+			line-height: 1.2em;
+			.title{
+				color: #fff;
+			}
+			.link{
+				display: inline-block;
+				color: #ff0000;
+				margin-top: 5px;
+				margin-bottom: 12px;
+				&:hover, &:active{
+					color: #fff;
+				}
+			}
+			.copyright{
+				font-size: 12px;
+			}
+		}
+	}
+	.footer-inner-logo{
+		.widthHeight(75px, 91px);
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -37.5px;
+		margin-top: -45.5px;
+		line-height: 100%;
+		.img{
+			.widthHeight;
+			vertical-align: middle;
+		}
+		@media @adaption_small {
+			display: none;
+		}
+	}
+	.footer-item-sns{
+		margin-right: 0;
+		.sns-item{
+			.adaption(margin-left, 70px);
+			&:nth-child(1){
+				margin-left: 0;
+			}
+			a{
+				display: inline-block;
+				.widthHeight(36px, 30px);
+				background: url('/www/images/pic_transparent.png') no-repeat center;
+				background-size: 100% 100%;
+				vertical-align: middle;
+				&.telegram{
+					&:hover{
+						background-image: url('/www/images/footer/telegram@2x.png') !important;
+					};
+				}
+				&.facebook{
+					width: 30px;
+					&:hover{
+						background-image: url('/www/images/footer/facebook@2x.png') !important;
+					}
+				}
+				&.twitter{
+					&:hover{
+						background-image: url('/www/images/footer/twitter@2x.png') !important;
+					}
+				}
+			}
+		}
+	}
+	@media @adaption_medium {
+		height: auto;
+		.footer-item{
+			width: @primary;
+			margin-right: 0;
+		}
+		.footer-item-sns{
+			float: left;
+		}
+	}
+	@media @adaption_small {
+		padding: 30px 0 22px 0;
+		.footer-item{
+			font-size: 15px;
+			line-height: 50px;
+			.footer-info-con{
+				.link{
+					margin-top: 5px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.footer-item-sns{
+			margin-top: 10px;
+		}
+	}
+}
